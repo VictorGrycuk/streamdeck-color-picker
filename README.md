@@ -3,14 +3,15 @@
 
 As a [color-blind](https://en.wikipedia.org/wiki/Color_blindness) person sometimes I struggle to recognize certain colors, so I thought it would be nice to have the functionality of [WhatColor](http://www.hikarun.com/e/) in StreamDeck. And while I was there, I decided to add the options to show their RGB or hexadecimal value.
 
-When pressed, it will get the color information (name, RGB, or hexadecimal) of the pixel where the mouse is and show it on the StreamDeck key. Optionally, the the value can be copied to the clipboard.
+When pressed, it will get the color information (name, RGB, or hexadecimal) of the pixel where the mouse is and show it on the StreamDeck key. Optionally, the the value can be copied to the clipboard
+
+![color-picker](images/color-picker.png).
 
 Also check my [KeePass plugin](https://github.com/VictorGrycuk/StreamDeck-KeePass) for StreamDeck.
 
 It was done using BarRaider's [Stream Deck Tools](https://github.com/BarRaider/streamdeck-tools).
 
 ## Features
-
 #### Color Picker
 
 When pressed, it will return either the color name, the RGB value, or the hexadecimal value of the color where the mouse is. It has the following configuration:

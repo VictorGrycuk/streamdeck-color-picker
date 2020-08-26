@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui,viewport-fit=cover">
+    <meta name=apple-mobile-web-app-capable content=yes>
+    <meta name=apple-mobile-web-app-status-bar-style content=black>
+    <title>StreamDeck.ColorPicker Settings</title>
+    <link rel="stylesheet" href="sdpi.css">
+    <script src="sdtools.common.js"></script>
+    <script src="PluginActionPI.js"></script>
+</head>
+<body>
+    <div class="sdpi-wrapper">
+        <div class="sdpi-item" id="dvValueToShow">
+            <div class="sdpi-item-label">Value to show</div>
+            <select class="sdpi-item-value select sdProperty" id="valueToShow" oninput="setSettings()">
+               <option value="colorName">Color name</option>
+               <option value="RGBValue">RGB Value</option>
+               <option value="hexValue">Hex Value</option>
+            </select>
+        </div>
+        <div type="checkbox" class="sdpi-item" id="configuration">
+            <div class="sdpi-item-label">Copy value to clipboard</div>
+            <div class="sdpi-item-value min100">
+                <div class="sdpi-item-child">
+                    <input id="copyToClipboard" class="sdProperty sdCheckbox" type="checkbox" name="configuration" oninput="setSettings()">
+                    <label for="copyToClipboard" class="sdpi-item-label"><span></span>Copy</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

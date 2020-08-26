@@ -1,0 +1,62 @@
+[
+  {
+    "Name": "Black",
+    "Color": "0, 0, 0"
+  },
+  {
+    "Name": "White",
+    "Color": "255, 255, 255"
+  },
+  {
+    "Name": "Green",
+    "Color": "0, 128, 0"
+  },
+  {
+    "Name": "Silver",
+    "Color": "192, 192, 192"
+  },
+  {
+    "Name": "Lime",
+    "Color": "0, 255, 0"
+  },
+  {
+    "Name": "Gray",
+    "Color": "128, 128, 128"
+  },
+  {
+    "Name": "Olive",
+    "Color": "128, 128, 0"
+  },
+  {
+    "Name": "Yellow",
+    "Color": "255, 255, 0"
+  },
+  {
+    "Name": "Maroon",
+    "Color": "128, 0, 0"
+  },
+  {
+    "Name": "Navy",
+    "Color": "0, 0, 128"
+  },
+  {
+    "Name": "Red",
+    "Color": "255, 0, 0"
+  },
+  {
+    "Name": "Blue",
+    "Color": "0, 0, 255"
+  },
+  {
+    "Name": "Purple",
+    "Color": "128, 0, 128"
+  },
+  {
+    "Name": "Teal",
+    "Color": "0, 128, 128"
+  },
+  {
+    "Name": "Fuchsia",
+    "Color": "255, 0, 255"
+  }
+]

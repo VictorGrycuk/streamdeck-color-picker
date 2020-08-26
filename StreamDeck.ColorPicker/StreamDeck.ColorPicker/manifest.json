@@ -1,0 +1,38 @@
+{
+  "Actions": [
+    {
+      "Icon": "Images/icon",
+      "Name": "Static Picker",
+      "States": [
+        {
+          "Image": "Images/colorPicker",
+          "TitleAlignment": "middle",
+          "FontSize": "12"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "Tooltip": "Allows to pick a pixel color and show its information.",
+      "UUID": "com.victorgrycuk.static.picker",
+      "PropertyInspectorPath": "PropertyInspector/ColorPickerPI.html"
+    }
+  ],
+  "Author": "Victor Grycuk",
+  "Name": "Color Picker",
+  "Description": "Colorblind Helper & Color Picker for Stream Deck",
+  "Icon": "Images/pluginIcon",
+  "URL": "https://github.com/VictorGrycuk/streamdeck-color-picker",
+  "Version": "1.0",
+  "CodePath": "StreamDeck.ColorPicker",
+  "Category": "Color Picker",
+  "CategoryIcon": "Images/categoryIcon",
+  "OS": [
+    {
+      "Platform": "windows",
+      "MinimumVersion": "10"
+    }
+  ],
+  "SDKVersion": 2,
+  "Software": {
+    "MinimumVersion": "4.3"
+  }
+}

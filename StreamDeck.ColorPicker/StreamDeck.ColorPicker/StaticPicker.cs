@@ -69,7 +69,6 @@ namespace StreamDeck.ColorPicker
 
         public override void ReceivedSettings(ReceivedSettingsPayload payload)
         {
-            Logger.Instance.LogMessage(TracingLevel.INFO, payload.Settings.ToString());
             Tools.AutoPopulateSettings(settings, payload.Settings);
             SaveSettings();
         }

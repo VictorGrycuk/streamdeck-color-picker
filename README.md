@@ -22,8 +22,13 @@ When pressed, it will return either the color name, the RGB value, or the hexade
     -   Color name
     -   RGB Value
     -   Hex Value
-
 -   **Copy value to clipboard:** If checked, it will copy the selected value to the clipboard. For the RGB it will copy the RGB value delimited by coma, for the hexadecimal value it will copy the hexadecimal without the hash character.
+
+### Dynamic Picker
+
+When selected, it will update  the Stream Deck key every second based with the information of the color where the mouse is.
+
+When the key is pressed, the value will be copied to the clipboard if the option corresponding option is enabled.
 
 ### Custom Color Name
 
@@ -37,7 +42,7 @@ However, have in mind that in its current state, the plugin has a static font si
 
 I am planning to add one more behaviour for the plugin:
 
--   **Fixed Dynamic:** Same as above, except at a fixed screen location.
+-   **Fixed Dynamic:** Same as dynamic but at a fixed screen location.
 
 * * *
 

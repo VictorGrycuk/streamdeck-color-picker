@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Drawing;
 
 namespace StreamDeck.ColorPicker
 {
@@ -35,12 +36,15 @@ namespace StreamDeck.ColorPicker
             public FunctionType FunctionType { get; set; }
 
             public string ColorValue { get; set; }
+
+            public Point Coordinates { get; set; }
         }
 
         public enum FunctionType
         {
             OnKeyPress,
-            Dynamic
+            Dynamic,
+            Fixed
         }
 
         #region Private Members
@@ -64,6 +68,11 @@ namespace StreamDeck.ColorPicker
         {
             try
             {
+                if (settings.FunctionType != FunctionType.Dynamic)
+                {
+                    settings.Coordinates = ScreenHelper.GetMouseLocation();
+                }
+
                 if (settings.FunctionType == FunctionType.OnKeyPress)
                 {
                     SetImage();
@@ -82,8 +91,7 @@ namespace StreamDeck.ColorPicker
 
         public void SetImage()
         {
-            var position = ScreenHelper.GetMouseLocation();
-            var color = ScreenHelper.GetColor(position);
+            var color = ScreenHelper.GetColor(settings.Coordinates);
             var valueFormat = new ValueFormat(settings.ValueToShow, color);
             settings.ColorValue = valueFormat.ValueToCopy;
 
@@ -97,6 +105,11 @@ namespace StreamDeck.ColorPicker
             try
             {
                 if (settings.FunctionType == FunctionType.Dynamic)
+                {
+                    settings.Coordinates = ScreenHelper.GetMouseLocation();
+                }
+                
+                if (settings.FunctionType != FunctionType.OnKeyPress)
                 {
                     SetImage();
                 }

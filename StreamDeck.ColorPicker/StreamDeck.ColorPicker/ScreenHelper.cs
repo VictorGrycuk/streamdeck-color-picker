@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using BarRaider.SdTools;
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Drawing.Imaging;
-using BarRaider.SdTools;
+using System.Runtime.InteropServices;
 
 namespace StreamDeck.ColorPicker
 {
@@ -50,7 +46,7 @@ namespace StreamDeck.ColorPicker
                 {
                     IntPtr hSrcDC = gsrc.GetHdc();
                     IntPtr hDC = gdest.GetHdc();
-                    int retval = BitBlt(hDC, 0, 0, 1, 1, hSrcDC, location.X, location.Y, (int)CopyPixelOperation.SourceCopy);
+                    _ = BitBlt(hDC, 0, 0, 1, 1, hSrcDC, location.X, location.Y, (int)CopyPixelOperation.SourceCopy);
                     gdest.ReleaseHdc();
                     gsrc.ReleaseHdc();
                 }

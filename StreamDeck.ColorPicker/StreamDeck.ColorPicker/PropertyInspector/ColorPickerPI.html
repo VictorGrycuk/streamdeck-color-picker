@@ -12,6 +12,13 @@
 </head>
 <body>
     <div class="sdpi-wrapper">
+        <div class="sdpi-item" id="dvFunctionType">
+            <div class="sdpi-item-label">Select Type</div>
+            <select class="sdpi-item-value select sdProperty" id="functionType" oninput="setSettings()">
+               <option value="onKeyPress">On Key Press</option>
+               <option value="dynamic">Dynamic</option>
+            </select>
+        </div>
         <div class="sdpi-item" id="dvValueToShow">
             <div class="sdpi-item-label">Value to show</div>
             <select class="sdpi-item-value select sdProperty" id="valueToShow" oninput="setSettings()">

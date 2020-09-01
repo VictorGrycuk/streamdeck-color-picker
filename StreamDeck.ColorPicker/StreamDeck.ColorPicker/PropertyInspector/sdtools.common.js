@@ -42,16 +42,17 @@ function websocketOnMessage(evt) {
     // Received message from Stream Deck
     var jsonObj = JSON.parse(evt.data);
 
+    var payload;
     if (jsonObj.event === 'sendToPropertyInspector') {
-        var payload = jsonObj.payload;
+        payload = jsonObj.payload;
         loadConfiguration(payload);
     }
     else if (jsonObj.event === 'didReceiveSettings') {
-        var payload = jsonObj.payload;
+        payload = jsonObj.payload;
         loadConfiguration(payload.settings);
     }
     else {
-        console.log("Unhandled websocketOnMessage: " + jsonObj.event);
+        console.log('Unhandled websocketOnMessage: ' + jsonObj.event);
     }
 }
 
@@ -61,20 +62,20 @@ function loadConfiguration(payload) {
     for (var key in payload) {
         try {
             var elem = document.getElementById(key);
-            if (elem.classList.contains("sdCheckbox")) { // Checkbox
+            if (elem.classList.contains('sdCheckbox')) { // Checkbox
                 elem.checked = payload[key];
             }
-            else if (elem.classList.contains("sdFile")) { // File
-                var elemFile = document.getElementById(elem.id + "Filename");
+            else if (elem.classList.contains('sdFile')) { // File
+                var elemFile = document.getElementById(elem.id + 'Filename');
                 elemFile.innerText = payload[key];
                 if (!elemFile.innerText) {
-                    elemFile.innerText = "No file...";
+                    elemFile.innerText = 'No file...';
                 }
             }
-            else if (elem.classList.contains("sdList")) { // Dynamic dropdown
-                var textProperty = elem.getAttribute("sdListTextProperty");
-                var valueProperty = elem.getAttribute("sdListValueProperty");
-                var valueField = elem.getAttribute("sdValueField");
+            else if (elem.classList.contains('sdList')) { // Dynamic dropdown
+                var textProperty = elem.getAttribute('sdListTextProperty');
+                var valueProperty = elem.getAttribute('sdListValueProperty');
+                var valueField = elem.getAttribute('sdValueField');
 
                 var items = payload[key];
                 elem.options.length = 0;
@@ -87,31 +88,32 @@ function loadConfiguration(payload) {
                 }
                 elem.value = payload[valueField];
             }
-            else if (elem.classList.contains("sdHTML")) { // HTML element
+            else if (elem.classList.contains('sdHTML')) { // HTML element
                 elem.innerHTML = payload[key];
             }
             else { // Normal value
                 elem.value = payload[key];
             }
-            console.log("Load: " + key + "=" + payload[key]);
+            console.log(`Load: ${ key }=${ payload[key] }`);
         }
         catch (err) {
-            console.log("loadConfiguration failed for key: " + key + " - " + err);
+            console.log(`loadConfiguration failed for key: ${ key } - ${ err }`);
         }
     }
 }
 
 function setSettings() {
     var payload = {};
-    var elements = document.getElementsByClassName("sdProperty");
+    var elements = document.getElementsByClassName('sdProperty');
 
     Array.prototype.forEach.call(elements, function (elem) {
         var key = elem.id;
-        if (elem.classList.contains("sdCheckbox")) { // Checkbox
+        var valueField;
+        if (elem.classList.contains('sdCheckbox')) { // Checkbox
             payload[key] = elem.checked;
         }
-        else if (elem.classList.contains("sdFile")) { // File
-            var elemFile = document.getElementById(elem.id + "Filename");
+        else if (elem.classList.contains('sdFile')) { // File
+            var elemFile = document.getElementById(elem.id + 'Filename');
             payload[key] = elem.value;
             if (!elem.value) {
                 // Fetch innerText if file is empty (happens when we lose and regain focus to this key)
@@ -122,18 +124,18 @@ function setSettings() {
                 elemFile.innerText = elem.value;
             }
         }
-        else if (elem.classList.contains("sdList")) { // Dynamic dropdown
-            var valueField = elem.getAttribute("sdValueField");
+        else if (elem.classList.contains('sdList')) { // Dynamic dropdown
+            valueField = elem.getAttribute('sdValueField');
             payload[valueField] = elem.value;
         }
-        else if (elem.classList.contains("sdHTML")) { // HTML element
-            var valueField = elem.getAttribute("sdValueField");
+        else if (elem.classList.contains('sdHTML')) { // HTML element
+            valueField = elem.getAttribute('sdValueField');
             payload[valueField] = elem.innerHTML;
         }
         else { // Normal value
             payload[key] = elem.value;
         }
-        console.log("Save: " + key + "<=" + payload[key]);
+        console.log(`Save: ${ key }<=${ payload[key] }`);
     });
     setSettingsToPlugin(payload);
 }
@@ -155,7 +157,7 @@ function setSettingsToPlugin(payload) {
 function sendPayloadToPlugin(payload) {
     if (websocket && (websocket.readyState === 1)) {
         const json = {
-            'action': actionInfo['action'],
+            'action': actionInfo.action,
             'event': 'sendToPlugin',
             'context': uuid,
             'payload': payload
@@ -168,7 +170,7 @@ function sendPayloadToPlugin(payload) {
 function sendValueToPlugin(value, param) {
     if (websocket && (websocket.readyState === 1)) {
         const json = {
-            'action': actionInfo['action'],
+            'action': actionInfo.action,
             'event': 'sendToPlugin',
             'context': uuid,
             'payload': {
@@ -231,20 +233,20 @@ function addDynamicStyles(clrs) {
     input[type="radio"]:active + label span,
     input[type="checkbox"]:active:checked + label span,
     input[type="checkbox"]:active + label span {
-      background-color: ${clrs.mouseDownColor};
+    background-color: ${clrs.mouseDownColor};
     }
 
     input[type="radio"]:active + label span,
     input[type="checkbox"]:active + label span {
-      background-color: ${clrs.buttonPressedBorderColor};
+    background-color: ${clrs.buttonPressedBorderColor};
     }
 
     td.selected,
     td.selected:hover,
     li.selected:hover,
     li.selected {
-      color: white;
-      background-color: ${clrs.highlightColor};
+    color: white;
+    background-color: ${clrs.highlightColor};
     }
 
     .sdpi-file-label > label:active,
@@ -253,9 +255,9 @@ function addDynamicStyles(clrs) {
     label.sdpi-file-info:active,
     input[type="file"]::-webkit-file-upload-button:active,
     button:active {
-      background-color: ${clrs.buttonPressedBackgroundColor};
-      color: ${clrs.buttonPressedTextColor};
-      border-color: ${clrs.buttonPressedBorderColor};
+    background-color: ${clrs.buttonPressedBackgroundColor};
+    color: ${clrs.buttonPressedTextColor};
+    border-color: ${clrs.buttonPressedBorderColor};
     }
 
     ::-webkit-progress-value,
@@ -269,7 +271,7 @@ function addDynamicStyles(clrs) {
     }
     `;
     document.body.appendChild(node);
-};
+}
 
 /** UTILITIES */
 

@@ -1,4 +1,5 @@
-# Color Picker for StreamDeck 
+# Color Picker for StreamDeck
+
 ## Description
 
 As a [color-blind](https://en.wikipedia.org/wiki/Color_blindness) person sometimes I struggle to recognize certain colors, so I thought it would be nice to have the functionality of [WhatColor](http://www.hikarun.com/e/) in StreamDeck. And while I was there, I decided to add the options to show their RGB or hexadecimal value.
@@ -12,17 +13,19 @@ Also check my [KeePass plugin](https://github.com/VictorGrycuk/StreamDeck-KeePas
 It was done using BarRaider's [Stream Deck Tools](https://github.com/BarRaider/streamdeck-tools).
 
 ## Features
-#### Color Picker
+
+### Color Picker
 
 When pressed, it will return either the color name, the RGB value, or the hexadecimal value of the color where the mouse is. It has the following configuration:
 
-- **Value to show:** The value to show on the key:
-  - Color name
-  - RGB Value
-  - Hex Value
-- **Copy value to clipboard:** If checked, it will copy the selected value to the clipboard. For the RGB it will copy the RGB value delimited by coma, for the hexadecimal value it will copy the hexadecimal without the hash character.
+-   **Value to show:** The value to show on the key:
+    -   Color name
+    -   RGB Value
+    -   Hex Value
 
-#### Custom Color Name
+-   **Copy value to clipboard:** If checked, it will copy the selected value to the clipboard. For the RGB it will copy the RGB value delimited by coma, for the hexadecimal value it will copy the hexadecimal without the hash character.
+
+### Custom Color Name
 
 I am using the [WhatColor](http://www.hikarun.com/e/) names definition for the 16 VGA color. I might expand this, not sure.
 
@@ -32,11 +35,10 @@ However, have in mind that in its current state, the plugin has a static font si
 
 ## Future Features
 
-I am planning to add two different behaviour for the plugin:
+I am planning to add one more behaviour for the plugin:
 
-- **Dynamic:** Follow the mouse around and update the data shown in the key every 1 second.
-- **Fixed Dynamic:** Same as above, except at a fixed screen location.
+-   **Fixed Dynamic:** Same as above, except at a fixed screen location.
 
----
+* * *
 
-The icons are modified version of *Color* and *iOS Filled* at [Icon8](https://icons8.com).
+The icons are modified version of _Color_ and _iOS Filled_ at [Icon8](https://icons8.com).

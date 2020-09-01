@@ -21,7 +21,7 @@
   "Description": "Colorblind Helper & Color Picker for Stream Deck",
   "Icon": "Images/pluginIcon",
   "URL": "https://github.com/VictorGrycuk/streamdeck-color-picker",
-  "Version": "1.0",
+  "Version": "1.1",
   "CodePath": "StreamDeck.ColorPicker",
   "Category": "Color Picker",
   "CategoryIcon": "Images/categoryIcon",

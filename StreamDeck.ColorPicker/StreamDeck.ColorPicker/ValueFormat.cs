@@ -46,6 +46,8 @@ namespace StreamDeck.ColorPicker
                     ValueToShow = color.ToHex().Replace("#", string.Empty);
                     ValueToCopy = ValueToShow;
                     break;
+                default:
+                    throw new NotSupportedException($"The value '{ valueType }' is not supported.");
             }
 
             // Set the text color to white if the color is below certain threshold

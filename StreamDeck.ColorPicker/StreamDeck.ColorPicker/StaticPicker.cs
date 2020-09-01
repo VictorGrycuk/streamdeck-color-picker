@@ -2,7 +2,6 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
-using System.Threading.Tasks;
 
 namespace StreamDeck.ColorPicker
 {
@@ -13,20 +12,40 @@ namespace StreamDeck.ColorPicker
         {
             public static PluginSettings CreateDefaultSettings()
             {
-                var instance = new PluginSettings { ValueToShow = string.Empty };
+                var instance = new PluginSettings
+                {
+                    SelectValueToShow = string.Empty,
+                    SelectFunctionType = string.Empty,
+                };
+
                 return instance;
             }
 
             [JsonProperty(PropertyName = "valueToShow")]
-            public string ValueToShow { get; set; }
+            public string SelectValueToShow { get; set; }
+            
+            public ValueFormat.ValueType ValueToShow { get; set; }
 
             [JsonProperty(PropertyName = "copyToClipboard")]
             public bool CopyToClipboard { get; set; }
+
+            [JsonProperty(PropertyName = "functionType")]
+            public string SelectFunctionType { get; set; }
+
+            public FunctionType FunctionType { get; set; }
+
+            public string ColorValue { get; set; }
+        }
+
+        public enum FunctionType
+        {
+            OnKeyPress,
+            Dynamic
         }
 
         #region Private Members
 
-        private PluginSettings settings;
+        private static PluginSettings settings;
 
         #endregion
         public StaticPicker(SDConnection connection, InitialPayload payload) : base(connection, payload)
@@ -45,16 +64,14 @@ namespace StreamDeck.ColorPicker
         {
             try
             {
-                Enum.TryParse(settings.ValueToShow, true, out ValueFormat.ValueType valueType);
-                var position = ScreenHelper.GetMouseLocation();
-                var color = ScreenHelper.GetColor(position);
-                var valueFormat = new ValueFormat(valueType, color);
-                var keyImage = ScreenHelper.GetKeyImage(valueFormat);
-                Connection.SetImageAsync(keyImage);
+                if (settings.FunctionType == FunctionType.OnKeyPress)
+                {
+                    SetImage();
+                }
 
                 if (settings.CopyToClipboard)
                 {
-                    ClipboardHelper.SendToClipboard(valueFormat.ValueToCopy);
+                    ClipboardHelper.SendToClipboard(settings.ColorValue);
                 }
             }
             catch (Exception ex)
@@ -63,14 +80,38 @@ namespace StreamDeck.ColorPicker
             }
         }
 
+        public void SetImage()
+        {
+            var position = ScreenHelper.GetMouseLocation();
+            var color = ScreenHelper.GetColor(position);
+            var valueFormat = new ValueFormat(settings.ValueToShow, color);
+            settings.ColorValue = valueFormat.ValueToCopy;
+
+            Connection.SetImageAsync(ScreenHelper.GetKeyImage(valueFormat));
+        }
+
         public override void KeyReleased(KeyPayload payload) { }
 
-        public override void OnTick() { }
+        public override void OnTick()
+        {
+            try
+            {
+                if (settings.FunctionType == FunctionType.Dynamic)
+                {
+                    SetImage();
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Instance.LogMessage(TracingLevel.INFO, ex.Message);
+            }
+        }
 
         public override void ReceivedSettings(ReceivedSettingsPayload payload)
         {
-            Logger.Instance.LogMessage(TracingLevel.INFO, payload.Settings.ToString());
             Tools.AutoPopulateSettings(settings, payload.Settings);
+            UpdateSettingsEnum();
+
             SaveSettings();
         }
 
@@ -78,9 +119,18 @@ namespace StreamDeck.ColorPicker
 
         #region Private Methods
 
-        private Task SaveSettings()
+        private void SaveSettings()
         {
-            return Connection.SetSettingsAsync(JObject.FromObject(settings));
+            _ = Connection.SetSettingsAsync(JObject.FromObject(settings));
+        }
+
+        private void UpdateSettingsEnum()
+        {
+            _ = Enum.TryParse(settings.SelectFunctionType, true, out FunctionType functionType);
+            _ = Enum.TryParse(settings.SelectValueToShow, true, out ValueFormat.ValueType valueType);
+
+            settings.FunctionType = functionType;
+            settings.ValueToShow = valueType;
         }
 
         #endregion

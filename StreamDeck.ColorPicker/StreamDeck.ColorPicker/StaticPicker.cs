@@ -2,9 +2,6 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
-using System.Drawing;
-using System.Drawing.Text;
-using System.Threading.Tasks;
 
 namespace StreamDeck.ColorPicker
 {
@@ -48,7 +45,7 @@ namespace StreamDeck.ColorPicker
 
         #region Private Members
 
-        private PluginSettings settings;
+        private static PluginSettings settings;
 
         #endregion
         public StaticPicker(SDConnection connection, InitialPayload payload) : base(connection, payload)
@@ -122,9 +119,9 @@ namespace StreamDeck.ColorPicker
 
         #region Private Methods
 
-        private Task SaveSettings()
+        private void SaveSettings()
         {
-            return Connection.SetSettingsAsync(JObject.FromObject(settings));
+            _ = Connection.SetSettingsAsync(JObject.FromObject(settings));
         }
 
         private void UpdateSettingsEnum()

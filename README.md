@@ -35,9 +35,8 @@ However, have in mind that in its current state, the plugin has a static font si
 
 ## Future Features
 
-I am planning to add two different behaviour for the plugin:
+I am planning to add one more behaviour for the plugin:
 
--   **Dynamic:** Follow the mouse around and update the data shown in the key every 1 second.
 -   **Fixed Dynamic:** Same as above, except at a fixed screen location.
 
 * * *

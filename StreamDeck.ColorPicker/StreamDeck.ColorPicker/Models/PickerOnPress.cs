@@ -14,6 +14,7 @@ namespace StreamDeck.ColorPicker.Models
         {
             mouseLocation = ScreenHelper.GetMouseLocation();
             SetImageKey();
+            CopyToClipboard();
         }
     }
 }

@@ -9,6 +9,7 @@ namespace StreamDeck.ColorPicker.Models
     {
         protected readonly SDConnection connection;
         protected readonly bool copyToClipboard;
+        protected Color pixelColor;
         internal readonly Format format;
         protected Point mouseLocation;
 
@@ -31,13 +32,16 @@ namespace StreamDeck.ColorPicker.Models
 
         protected void SetImageKey()
         {
-            var pixelColor = ScreenHelper.GetPixelColor(mouseLocation);
+            pixelColor = ScreenHelper.GetPixelColor(mouseLocation);
             var keyImage = ImageHelper.GetImage(pixelColor);
             var colorValue = format.GetValueToShow(pixelColor);
             var isDarkColor = ColorHelper.IsDarkColor(pixelColor);
             keyImage = ImageHelper.SetImageText(keyImage, colorValue, format, isDarkColor);
             connection.SetImageAsync(keyImage);
+        }
 
+        protected void CopyToClipboard()
+        {
             if (copyToClipboard)
             {
                 ClipboardHelper.SendToClipboard(format.GetValueToCopy(pixelColor));

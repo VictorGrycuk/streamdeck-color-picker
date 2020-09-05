@@ -18,6 +18,7 @@ namespace StreamDeck.ColorPicker.Models
         internal override void OnTick()
         {
             SetImageKey();
+            CopyToClipboard();
         }
     }
 }

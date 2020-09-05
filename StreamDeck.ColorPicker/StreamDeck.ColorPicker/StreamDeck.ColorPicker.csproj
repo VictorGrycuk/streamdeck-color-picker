@@ -68,16 +68,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClipboardHelper.cs" />
-    <Compile Include="ScreenHelper.cs" />
+    <Compile Include="FormatFactory.cs" />
+    <Compile Include="Helpers\ClipboardHelper.cs" />
+    <Compile Include="Helpers\ColorHelper.cs" />
+    <Compile Include="Models\DefinitionColor.cs" />
+    <Compile Include="Helpers\ScreenHelper.cs" />
+    <Compile Include="Models\FormatHex.cs" />
+    <Compile Include="Models\FormatName.cs" />
+    <Compile Include="Models\FormatRGB.cs" />
+    <Compile Include="Models\PickerDynamic.cs" />
+    <Compile Include="Models\PickerFixed.cs" />
+    <Compile Include="Helpers\ImageHelper.cs" />
+    <Compile Include="Models\Format.cs" />
+    <Compile Include="Models\PickerOnPress.cs" />
+    <Compile Include="Models\Picker.cs" />
+    <Compile Include="ColorPickerFactory.cs" />
+    <Compile Include="PluginSettings.cs" />
     <Compile Include="StaticPicker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ValueFormat.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Colors.json">
+    <None Include="ColorDefinitions\Simple.definition.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="ColorDefinitions\Colors.definition.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="manifest.json">

@@ -1,0 +1,502 @@
+[
+  {
+    "Name": "Alice Blue",
+    "Color": "240, 248, 255"
+  },
+  {
+    "Name": "Antique White",
+    "Color": "250, 235, 215"
+  },
+  {
+    "Name": "Aquamarine",
+    "Color": "127, 255, 212"
+  },
+  {
+    "Name": "Azure",
+    "Color": "240, 255, 255"
+  },
+  {
+    "Name": "Beige",
+    "Color": "245, 245, 220"
+  },
+  {
+    "Name": "Bisque",
+    "Color": "255, 228, 196"
+  },
+  {
+    "Name": "Black",
+    "Color": "0, 0, 0"
+  },
+  {
+    "Name": "Blanched Almond",
+    "Color": "255, 235, 205"
+  },
+  {
+    "Name": "Blue",
+    "Color": "0, 0, 255"
+  },
+  {
+    "Name": "Blue Violet",
+    "Color": "138, 43, 226"
+  },
+  {
+    "Name": "Brown",
+    "Color": "165, 42, 42"
+  },
+  {
+    "Name": "Burly Wood",
+    "Color": "222, 184, 135"
+  },
+  {
+    "Name": "Cadet Blue",
+    "Color": "95, 158, 160"
+  },
+  {
+    "Name": "Chartreuse",
+    "Color": "127, 255, 0"
+  },
+  {
+    "Name": "Chocolate",
+    "Color": "210, 105, 30"
+  },
+  {
+    "Name": "Coral",
+    "Color": "255, 127, 80"
+  },
+  {
+    "Name": "Cornflower Blue",
+    "Color": "100, 149, 237"
+  },
+  {
+    "Name": "Cornsilk",
+    "Color": "255, 248, 220"
+  },
+  {
+    "Name": "Crimson",
+    "Color": "220, 20, 60"
+  },
+  {
+    "Name": "Dark Blue",
+    "Color": "0, 0, 139"
+  },
+  {
+    "Name": "Dark Cyan",
+    "Color": "0, 139, 139"
+  },
+  {
+    "Name": "Dark Goldenrod",
+    "Color": "184, 134, 11"
+  },
+  {
+    "Name": "Dark Green",
+    "Color": "0, 100, 0"
+  },
+  {
+    "Name": "Dark Khaki",
+    "Color": "189, 183, 107"
+  },
+  {
+    "Name": "Dark Magenta",
+    "Color": "139, 0, 139"
+  },
+  {
+    "Name": "Dark Olive Green",
+    "Color": "85, 107, 47"
+  },
+  {
+    "Name": "Dark Orange",
+    "Color": "255, 140, 0"
+  },
+  {
+    "Name": "Dark Orchid",
+    "Color": "153, 50, 204"
+  },
+  {
+    "Name": "Dark Red",
+    "Color": "139, 0, 0"
+  },
+  {
+    "Name": "Dark Salmon",
+    "Color": "233, 150, 122"
+  },
+  {
+    "Name": "Dark Sea Green",
+    "Color": "143, 188, 143"
+  },
+  {
+    "Name": "Dark Slate Blue",
+    "Color": "72, 61, 139"
+  },
+  {
+    "Name": "Dark Slate Gray",
+    "Color": "47, 79, 79"
+  },
+  {
+    "Name": "Dark Turquoise",
+    "Color": "0, 206, 209"
+  },
+  {
+    "Name": "Dark Violet",
+    "Color": "148, 0, 211"
+  },
+  {
+    "Name": "Deep Pink",
+    "Color": "255, 20, 147"
+  },
+  {
+    "Name": "Deep Sky Blue",
+    "Color": "0, 191, 255"
+  },
+  {
+    "Name": "Dodger Blue",
+    "Color": "30, 144, 255"
+  },
+  {
+    "Name": "Fire Brick",
+    "Color": "178, 34, 34"
+  },
+  {
+    "Name": "Floral White",
+    "Color": "255, 250, 240"
+  },
+  {
+    "Name": "Forest Green",
+    "Color": "34, 139, 34"
+  },
+  {
+    "Name": "Ghost White",
+    "Color": "248, 248, 255"
+  },
+  {
+    "Name": "Gold",
+    "Color": "255, 215, 0"
+  },
+  {
+    "Name": "Goldenrod",
+    "Color": "218, 165, 32"
+  },
+  {
+    "Name": "Gray",
+    "Color": "128, 128, 128"
+  },
+  {
+    "Name": "Green",
+    "Color": "0, 128, 0"
+  },
+  {
+    "Name": "Green Yellow",
+    "Color": "173, 255, 47"
+  },
+  {
+    "Name": "Honeydew",
+    "Color": "240, 255, 240"
+  },
+  {
+    "Name": "Hot Pink",
+    "Color": "255, 105, 180"
+  },
+  {
+    "Name": "Indian Red",
+    "Color": "205, 92, 92"
+  },
+  {
+    "Name": "Indigo",
+    "Color": "75, 0, 130"
+  },
+  {
+    "Name": "Ivory",
+    "Color": "255, 255, 240"
+  },
+  {
+    "Name": "Khaki",
+    "Color": "240, 230, 140"
+  },
+  {
+    "Name": "Lavender",
+    "Color": "230, 230, 250"
+  },
+  {
+    "Name": "Lavender Blush",
+    "Color": "255, 240, 245"
+  },
+  {
+    "Name": "Lawn Green",
+    "Color": "124, 252, 0"
+  },
+  {
+    "Name": "Lemon Chiffon",
+    "Color": "255, 250, 205"
+  },
+  {
+    "Name": "Light Blue",
+    "Color": "173, 216, 230"
+  },
+  {
+    "Name": "Light Coral",
+    "Color": "240, 128, 128"
+  },
+  {
+    "Name": "Light Cyan",
+    "Color": "224, 255, 255"
+  },
+  {
+    "Name": "Light Goldenrod Yellow",
+    "Color": "250, 250, 210"
+  },
+  {
+    "Name": "Light Green",
+    "Color": "144, 238, 144"
+  },
+  {
+    "Name": "Light Pink",
+    "Color": "255, 182, 193"
+  },
+  {
+    "Name": "Light Salmon",
+    "Color": "255, 160, 122"
+  },
+  {
+    "Name": "Light Sea Green",
+    "Color": "32, 178, 170"
+  },
+  {
+    "Name": "Light Sky Blue",
+    "Color": "135, 206, 250"
+  },
+  {
+    "Name": "Light Slate Gray",
+    "Color": "119, 136, 153"
+  },
+  {
+    "Name": "Light Steel Blue",
+    "Color": "176, 196, 222"
+  },
+  {
+    "Name": "Light Yellow",
+    "Color": "255, 255, 224"
+  },
+  {
+    "Name": "Lime Green",
+    "Color": "50, 205, 50"
+  },
+  {
+    "Name": "Linen",
+    "Color": "250, 240, 230"
+  },
+  {
+    "Name": "Medium Aquamarine",
+    "Color": "102, 205, 170"
+  },
+  {
+    "Name": "Medium Blue",
+    "Color": "0, 0, 205"
+  },
+  {
+    "Name": "Medium Orchid",
+    "Color": "186, 85, 211"
+  },
+  {
+    "Name": "Medium Purple",
+    "Color": "147, 112, 219"
+  },
+  {
+    "Name": "Medium Sea Green",
+    "Color": "60, 179, 113"
+  },
+  {
+    "Name": "Medium Slate Blue",
+    "Color": "123, 104, 238"
+  },
+  {
+    "Name": "Medium Spring Green",
+    "Color": "0, 250, 154"
+  },
+  {
+    "Name": "Medium Turquoise",
+    "Color": "72, 209, 204"
+  },
+  {
+    "Name": "Medium Violet Red",
+    "Color": "199, 21, 133"
+  },
+  {
+    "Name": "Midnight Blue",
+    "Color": "25, 25, 112"
+  },
+  {
+    "Name": "Mint Cream",
+    "Color": "245, 255, 250"
+  },
+  {
+    "Name": "Misty Rose",
+    "Color": "255, 228, 225"
+  },
+  {
+    "Name": "Moccasin",
+    "Color": "255, 228, 181"
+  },
+  {
+    "Name": "Navajo White",
+    "Color": "255, 222, 173"
+  },
+  {
+    "Name": "Old Lace",
+    "Color": "253, 245, 230"
+  },
+  {
+    "Name": "Olive Drab",
+    "Color": "107, 142,35 "
+  },
+  {
+    "Name": "Orange",
+    "Color": "255, 165, 0"
+  },
+  {
+    "Name": "Orange Red",
+    "Color": "255, 69, 0"
+  },
+  {
+    "Name": "Orchid",
+    "Color": "218, 112, 214"
+  },
+  {
+    "Name": "Pale Goldenrod",
+    "Color": "238, 232, 170"
+  },
+  {
+    "Name": "Pale Green",
+    "Color": "152, 251, 152"
+  },
+  {
+    "Name": "Pale Turquoise",
+    "Color": "175, 238, 238"
+  },
+  {
+    "Name": "Pale Violet Red",
+    "Color": "219, 112, 147"
+  },
+  {
+    "Name": "Papaya Whip",
+    "Color": "255, 239, 213"
+  },
+  {
+    "Name": "Peach Puff",
+    "Color": "255, 218, 185"
+  },
+  {
+    "Name": "Peru",
+    "Color": "205, 133, 63"
+  },
+  {
+    "Name": "Pink",
+    "Color": "255, 192,203"
+  },
+  {
+    "Name": "Plum",
+    "Color": "221, 160, 221"
+  },
+  {
+    "Name": "Powder Blue",
+    "Color": "176, 224, 230"
+  },
+  {
+    "Name": "Red",
+    "Color": "255, 0, 0"
+  },
+  {
+    "Name": "Rosy Brown",
+    "Color": "188, 143, 143"
+  },
+  {
+    "Name": "Royal Blue",
+    "Color": "65, 105, 225"
+  },
+  {
+    "Name": "Saddle Brown",
+    "Color": "139, 69, 19"
+  },
+  {
+    "Name": "Salmon",
+    "Color": "250, 128, 114"
+  },
+  {
+    "Name": "Sandy Brown",
+    "Color": "244, 164, 96"
+  },
+  {
+    "Name": "Sea Green",
+    "Color": "46, 139, 87"
+  },
+  {
+    "Name": "Seashell",
+    "Color": "255, 245, 238"
+  },
+  {
+    "Name": "Sienna",
+    "Color": "160, 82, 45"
+  },
+  {
+    "Name": "Sky Blue",
+    "Color": "135, 206, 235"
+  },
+  {
+    "Name": "Slate Blue",
+    "Color": "106, 90, 205"
+  },
+  {
+    "Name": "Slate Gray",
+    "Color": "112, 128, 144"
+  },
+  {
+    "Name": "Snow",
+    "Color": "255, 250, 250"
+  },
+  {
+    "Name": "Spring Green",
+    "Color": "0, 255, 127"
+  },
+  {
+    "Name": "Steel Blue",
+    "Color": "70, 130, 180"
+  },
+  {
+    "Name": "Tan",
+    "Color": "210, 180, 140"
+  },
+  {
+    "Name": "Teal",
+    "Color": "0, 128, 128"
+  },
+  {
+    "Name": "Thistle",
+    "Color": "216, 191, 216"
+  },
+  {
+    "Name": "Tomato",
+    "Color": "255, 99, 71"
+  },
+  {
+    "Name": "Turquoise",
+    "Color": "64, 224, 208"
+  },
+  {
+    "Name": "Violet",
+    "Color": "238, 130, 238"
+  },
+  {
+    "Name": "Wheat",
+    "Color": "245, 222, 179"
+  },
+  {
+    "Name": "White",
+    "Color": "255, 255, 255"
+  },
+  {
+    "Name": "Yellow",
+    "Color": "255,255,0"
+  },
+  {
+    "Name": "Yellow Green",
+    "Color": "154, 205, 50"
+  }
+]

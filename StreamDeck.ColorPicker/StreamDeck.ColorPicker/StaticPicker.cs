@@ -1,51 +1,14 @@
 ﻿using BarRaider.SdTools;
-using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using StreamDeck.ColorPicker.Models;
 using System;
-using System.Drawing;
 
 namespace StreamDeck.ColorPicker
 {
     [PluginActionId("com.victorgrycuk.static.picker")]
     public class StaticPicker : PluginBase
     {
-        private class PluginSettings
-        {
-            public static PluginSettings CreateDefaultSettings()
-            {
-                var instance = new PluginSettings
-                {
-                    SelectValueToShow = string.Empty,
-                    SelectFunctionType = string.Empty,
-                };
-
-                return instance;
-            }
-
-            [JsonProperty(PropertyName = "valueToShow")]
-            public string SelectValueToShow { get; set; }
-            
-            public ValueFormat.ValueType ValueToShow { get; set; }
-
-            [JsonProperty(PropertyName = "copyToClipboard")]
-            public bool CopyToClipboard { get; set; }
-
-            [JsonProperty(PropertyName = "functionType")]
-            public string SelectFunctionType { get; set; }
-
-            public FunctionType FunctionType { get; set; }
-
-            public string ColorValue { get; set; }
-
-            public Point Coordinates { get; set; }
-        }
-
-        public enum FunctionType
-        {
-            OnKeyPress,
-            Dynamic,
-            Fixed
-        }
+        private Picker colorPicker;
 
         #region Private Members
 
@@ -57,6 +20,8 @@ namespace StreamDeck.ColorPicker
             settings = payload.Settings == null || payload.Settings.Count == 0
                 ? PluginSettings.CreateDefaultSettings()
                 : payload.Settings.ToObject<PluginSettings>();
+
+            SetPicker();
         }
 
         public override void Dispose()
@@ -64,59 +29,23 @@ namespace StreamDeck.ColorPicker
             Logger.Instance.LogMessage(TracingLevel.INFO, $"Destructor called");
         }
 
-        public override void KeyPressed(KeyPayload payload)
-        {
-            try
-            {
-                if (settings.FunctionType != FunctionType.Dynamic)
-                {
-                    settings.Coordinates = ScreenHelper.GetMouseLocation();
-                }
-
-                if (settings.FunctionType == FunctionType.OnKeyPress)
-                {
-                    SetImage();
-                }
-
-                if (settings.CopyToClipboard)
-                {
-                    ClipboardHelper.SendToClipboard(settings.ColorValue);
-                }
-            }
-            catch (Exception ex)
-            {
-                Logger.Instance.LogMessage(TracingLevel.INFO, ex.Message);
-            }
-        }
-
-        public void SetImage()
-        {
-            var color = ScreenHelper.GetColor(settings.Coordinates);
-            var valueFormat = new ValueFormat(settings.ValueToShow, color);
-            settings.ColorValue = valueFormat.ValueToCopy;
-
-            Connection.SetImageAsync(ScreenHelper.GetKeyImage(valueFormat));
-        }
+        public override void KeyPressed(KeyPayload payload) => UpdateKey(onTick: false);
 
         public override void KeyReleased(KeyPayload payload) { }
 
-        public override void OnTick()
+        public override void OnTick() => UpdateKey(onTick: true);
+
+        public void UpdateKey(bool onTick)
         {
             try
             {
-                if (settings.FunctionType == FunctionType.Dynamic)
-                {
-                    settings.Coordinates = ScreenHelper.GetMouseLocation();
-                }
-                
-                if (settings.FunctionType != FunctionType.OnKeyPress)
-                {
-                    SetImage();
-                }
+                if (onTick) colorPicker.OnTick();
+                else colorPicker.OnPress();
             }
             catch (Exception ex)
             {
-                Logger.Instance.LogMessage(TracingLevel.INFO, ex.Message);
+                Logger.Instance.LogMessage(TracingLevel.ERROR, ex.Message);
+                Logger.Instance.LogMessage(TracingLevel.ERROR, ex.StackTrace);
             }
         }
 
@@ -124,6 +53,7 @@ namespace StreamDeck.ColorPicker
         {
             Tools.AutoPopulateSettings(settings, payload.Settings);
             UpdateSettingsEnum();
+            SetPicker();
 
             SaveSettings();
         }
@@ -140,10 +70,15 @@ namespace StreamDeck.ColorPicker
         private void UpdateSettingsEnum()
         {
             _ = Enum.TryParse(settings.SelectFunctionType, true, out FunctionType functionType);
-            _ = Enum.TryParse(settings.SelectValueToShow, true, out ValueFormat.ValueType valueType);
+            _ = Enum.TryParse(settings.SelectValueToShow, true, out FormatFactory.ValueType valueType);
 
             settings.FunctionType = functionType;
             settings.ValueToShow = valueType;
+        }
+
+        private void SetPicker()
+        {
+            colorPicker = ColorPickerFactory.GetColorPicker(Connection, settings);
         }
 
         #endregion

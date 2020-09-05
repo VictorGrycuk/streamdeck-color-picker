@@ -12,37 +12,79 @@ Also check my [KeePass plugin](https://github.com/VictorGrycuk/StreamDeck-KeePas
 
 It was done using BarRaider's [Stream Deck Tools](https://github.com/BarRaider/streamdeck-tools).
 
+
+
 ## Features
 
-### Color Picker
+- Can show three different color values
+  - Color name
+  - RGB values
+  - Hexadecimal value
+- Three behaviour modes
+  - On key press
+  - Dynamic
+  - Fixed
+- Customizable color name definitions
+  - The names are taken from a json file with a list with a color name and its RGB value
+  - The default is a slightly modified version of [WhatColor](http://www.hikarun.com/e/)'s recommended setting
+  - Also included is the VGA definition also taken from [WhatColor](http://www.hikarun.com/e/) settings
+- Values can be copied to the clipboard
 
-When pressed, it will return either the color name, the RGB value, or the hexadecimal value of the color where the mouse is. It has the following configuration:
 
--   **Value to show:** The value to show on the key:
-    -   Color name
-    -   RGB Value
-    -   Hex Value
--   **Copy value to clipboard:** If checked, it will copy the selected value to the clipboard. For the RGB it will copy the RGB value delimited by coma, for the hexadecimal value it will copy the hexadecimal without the hash character.
 
-### Dynamic Picker
+## Color Values
 
-When selected, it will update  the Stream Deck key every second based with the information of the color where the mouse is.
+### Color Names
 
-When the key is pressed, the value will be copied to the clipboard if the option corresponding option is enabled.
+![color-picker](images/cycle-name.gif).
 
-### Custom Color Name
+This value option will show the name of the color on the key's screen.
 
-I am using the [WhatColor](http://www.hikarun.com/e/) names definition for the 16 VGA color. I might expand this, not sure.
+The plugin breaks multi words names into new lines, so its best not to use with more than 3 words on it or it wont fit the key's screen It also resizes the font based on the longest word. `Cornflower` can be read, but anything longer and it might be too small to be red.
 
-However, I decided to leave the definition file open for customization. The file containing the definition is called `Colors.json` and can be found in the root folder of the plugin, and it consists of an array of color name and its RGB value.
+The colors name definition is stored in a file named `Colors.definition.json`, based on [WhatColor](http://www.hikarun.com/e/)'s recommended setting, found in a folder named ColorsDefinitions at the root folder of the plugin. At the moment, the plugin only loads this file, if you wish to change the definition file, you can either modify this file or replace it.
 
-However, have in mind that in its current state, the plugin has a static font size and long names might be cut off.
+When the copy to clipboard option is selected, the name of the color will be copied (including new lines).
 
-## Future Features
+### Color RGB Value
 
-I am planning to add one more behaviour for the plugin:
+![color-picker](images/cycle-rgb.gif)
 
--   **Fixed Dynamic:** Same as dynamic but at a fixed screen location.
+When this value option is selected, it will show the RGB values of the pixel.
+
+When the copy to clipboard option is selected, only the numeric values delimited by a comma will be copied.
+
+### Color Hexadecimal Value
+
+![color-picker](images/cycle-hexa.gif)
+
+When this value option is selected, it will show the hexadecimal value of the pixel.
+
+When the copy to clipboard option is selected, the hexadecimal value without the number sign will be copied to the clipboard.
+
+
+
+## Behaviours
+
+### On Key Press
+
+It will update the color value of the pixel where the mouse is at whenever the key is pressed.
+
+It will also copy the value of the color if the option it is activated.
+
+### Dynamic
+
+The key screen will be automatically updated every second based on the position of the mouse. AFAIK, one second is the shortest tick that the Stream Deck API allows.
+
+When the key is pressed, and if the option is selected, the value will be copied to the clipboard.
+
+### Fixed
+
+Similar to Dynamic, except it wont follow the mouse location.
+
+Instead, when the key is pressed the location of the mouse is updated and will stay ready the color of the pixel at that location.
+
+If the copy to clipboard option is activated, it will update the copied value every second.
 
 * * *
 

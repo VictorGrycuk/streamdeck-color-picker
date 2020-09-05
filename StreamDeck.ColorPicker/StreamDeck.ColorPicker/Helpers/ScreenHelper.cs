@@ -1,10 +1,9 @@
-﻿using BarRaider.SdTools;
-using System;
+﻿using System;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 
-namespace StreamDeck.ColorPicker
+namespace StreamDeck.ColorPicker.Helpers
 {
     public static class ScreenHelper
     {
@@ -24,7 +23,7 @@ namespace StreamDeck.ColorPicker
         [DllImport("shcore.dll")]
         private static extern int SetProcessDpiAwareness(ProcessDPIAwareness value);
 
-        public static Point GetMouseLocation()
+        internal static Point GetMouseLocation()
         {
             if (Environment.OSVersion.Version.Major >= 6)
             {
@@ -37,7 +36,7 @@ namespace StreamDeck.ColorPicker
             return cursorLocation;
         }
 
-        public static Color GetColor(Point location)
+        internal static Color GetPixelColor(Point location)
         {
             Bitmap screenPixel = new Bitmap(1, 1, PixelFormat.Format32bppArgb);
             using (Graphics gdest = Graphics.FromImage(screenPixel))
@@ -53,22 +52,6 @@ namespace StreamDeck.ColorPicker
             }
 
             return screenPixel.GetPixel(0, 0);
-        }
-
-        public static Image GetKeyImage(ValueFormat valueFormat)
-        {
-            var bmp = Tools.GenerateGenericKeyImage(out Graphics graphics);
-            graphics.FillRectangle(new SolidBrush(valueFormat.Color), 0, 0, bmp.Width, bmp.Height);
-            graphics.DrawString(
-                valueFormat.ValueToShow,
-                valueFormat.Font,
-                valueFormat.TextBrush, 
-                valueFormat.XPosition,
-                valueFormat.YPosition,
-                valueFormat.StringFormat
-            );
-
-            return bmp;
         }
     }
 }

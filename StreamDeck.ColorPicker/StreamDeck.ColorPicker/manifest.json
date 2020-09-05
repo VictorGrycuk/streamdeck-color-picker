@@ -2,7 +2,7 @@
   "Actions": [
     {
       "Icon": "Images/icon",
-      "Name": "Static Picker",
+      "Name": "Color Picker",
       "States": [
         {
           "Image": "Images/colorPicker",
@@ -18,10 +18,10 @@
   ],
   "Author": "Victor Grycuk",
   "Name": "Color Picker",
-  "Description": "Colorblind Helper & Color Picker for Stream Deck",
+  "Description": "Colorblind Helper & Color Picker for Stream Deck.\nShows a color's name, its RGB or hexadecimal value.",
   "Icon": "Images/pluginIcon",
   "URL": "https://github.com/VictorGrycuk/streamdeck-color-picker",
-  "Version": "1.1",
+  "Version": "1.2",
   "CodePath": "StreamDeck.ColorPicker",
   "Category": "Color Picker",
   "CategoryIcon": "Images/categoryIcon",

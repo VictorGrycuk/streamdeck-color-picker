@@ -1,6 +1,6 @@
 ﻿using System.Threading;
 
-namespace StreamDeck.ColorPicker
+namespace StreamDeck.ColorPicker.Helpers
 {
     public static class ClipboardHelper
     {

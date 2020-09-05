@@ -39,7 +39,8 @@ namespace StreamDeck.ColorPicker.Helpers
 
         internal static bool IsDarkColor(Color color)
         {
-            return color.GetBrightness() <= 0.5;
+            var luminance = 0.2126 * color.R + 0.7152 * color.G + 0.0722 * color.B;
+            return luminance < 0.179;
         }
     }
 }

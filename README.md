@@ -40,7 +40,7 @@ It was done using BarRaider's [Stream Deck Tools](https://github.com/BarRaider/s
 
 This value option will show the name of the color on the key's screen.
 
-The plugin breaks multi words names into new lines, so its best not to use with more than 3 words on it or it wont fit the key's screen It also resizes the font based on the longest word. `Cornflower` can be read, but anything longer and it might be too small to be red.
+The plugin breaks multi words names into new lines, so its best not to use with more than 3 words on it or it wont fit the key's screen It also resizes the font based on the longest word. `Cornflower` can be read, but anything longer and it might be too small to be read.
 
 The colors name definition is stored in a file named `Colors.definition.json`, based on [WhatColor](http://www.hikarun.com/e/)'s recommended setting, found in a folder named ColorsDefinitions at the root folder of the plugin. At the moment, the plugin only loads this file, if you wish to change the definition file, you can either modify this file or replace it.
 

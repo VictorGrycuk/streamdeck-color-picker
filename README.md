@@ -8,8 +8,6 @@ When pressed, it will get the color information (name, RGB, or hexadecimal) of t
 
 ![color-picker](images/color-picker.png).
 
-Also check my [KeePass plugin](https://github.com/VictorGrycuk/StreamDeck-KeePass) for StreamDeck.
-
 It was done using BarRaider's [Stream Deck Tools](https://github.com/BarRaider/streamdeck-tools).
 
 
@@ -85,6 +83,11 @@ Similar to Dynamic, except it wont follow the mouse location.
 Instead, when the key is pressed the location of the mouse is updated and will stay ready the color of the pixel at that location.
 
 If the copy to clipboard option is activated, it will update the copied value every second.
+
+## My others Stream Deck plugins
+
+- **[KeePass for StreamDeck](https://github.com/VictorGrycuk/StreamDeck-KeePass)**
+- **[Magnifier](https://github.com/VictorGrycuk/streamdeck-magnifier)**
 
 * * *
 

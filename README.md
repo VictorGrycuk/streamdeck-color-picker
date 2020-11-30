@@ -72,7 +72,7 @@ It will also copy the value of the color if the option it is activated.
 
 ### Dynamic
 
-The key screen will be automatically updated every second based on the position of the mouse. AFAIK, one second is the shortest tick that the Stream Deck API allows.
+The key screen will be automatically updated at a refresh rate of 10ms.
 
 When the key is pressed, and if the option is selected, the value will be copied to the clipboard.
 
@@ -82,7 +82,7 @@ Similar to Dynamic, except it wont follow the mouse location.
 
 Instead, when the key is pressed the location of the mouse is updated and will stay ready the color of the pixel at that location.
 
-If the copy to clipboard option is activated, it will update the copied value every second.
+If the copy to clipboard option is activated, it will update the copied value at the same speed of the refresh rate.
 
 ## My others Stream Deck plugins
 

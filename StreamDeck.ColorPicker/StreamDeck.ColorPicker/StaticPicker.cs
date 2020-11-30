@@ -2,6 +2,7 @@
 using Newtonsoft.Json.Linq;
 using StreamDeck.ColorPicker.Models;
 using System;
+using System.Timers;
 
 namespace StreamDeck.ColorPicker
 {
@@ -13,6 +14,7 @@ namespace StreamDeck.ColorPicker
         #region Private Members
 
         private static PluginSettings settings;
+        private readonly Timer timer;
 
         #endregion
         public StaticPicker(SDConnection connection, InitialPayload payload) : base(connection, payload)
@@ -22,10 +24,17 @@ namespace StreamDeck.ColorPicker
                 : payload.Settings.ToObject<PluginSettings>();
 
             SetPicker();
+
+            timer = new Timer(10);
+            timer.Elapsed += new ElapsedEventHandler(CustomTick);
+            timer.Enabled = false;
+            timer.Start();
         }
 
         public override void Dispose()
         {
+            timer.Stop();
+            timer.Dispose();
             Logger.Instance.LogMessage(TracingLevel.INFO, $"Destructor called");
         }
 
@@ -33,7 +42,9 @@ namespace StreamDeck.ColorPicker
 
         public override void KeyReleased(KeyPayload payload) { }
 
-        public override void OnTick() => UpdateKey(onTick: true);
+        public override void OnTick() { }
+
+        private void CustomTick(object sender, ElapsedEventArgs e) => UpdateKey(onTick: true);
 
         public void UpdateKey(bool onTick)
         {

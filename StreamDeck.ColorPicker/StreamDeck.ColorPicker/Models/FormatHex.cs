@@ -7,7 +7,7 @@ namespace StreamDeck.ColorPicker.Models
     {
         internal override Font GetFont(string text)
         {
-            return new Font("Consolas", 14, FontStyle.Bold);
+            return new Font("Consolas", 120, FontStyle.Bold);
         }
 
         internal override StringFormat GetStringFormat()

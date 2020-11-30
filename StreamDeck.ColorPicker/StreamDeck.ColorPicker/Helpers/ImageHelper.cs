@@ -17,7 +17,7 @@ namespace StreamDeck.ColorPicker.Helpers
         internal static Font ResizeFont(Graphics graphics, string text, Font font)
         {
             var newSize = graphics.MeasureString(text, font);
-            if (newSize.Width > 142)
+            if (newSize.Width > 142 || newSize.Height > 142)
             {
                 return ResizeFont(graphics, text, new Font("Consolas", font.Size - 2, FontStyle.Bold, GraphicsUnit.Pixel));
             }
@@ -33,7 +33,7 @@ namespace StreamDeck.ColorPicker.Helpers
 
             using (var graphics = Graphics.FromImage(image))
             {
-                if (!isRGB) font = ResizeFont(graphics, text, font);
+                font = ResizeFont(graphics, text, font);
                 graphics.DrawString(text, font, isDarkColor ? Brushes.White : Brushes.Black, !isRGB ? 72 : 5 , 72, stringFormat);
             }
 

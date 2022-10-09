@@ -10,6 +10,7 @@ When pressed, it will get the color information (name, RGB, or hexadecimal) of t
 
 It was done using BarRaider's [Stream Deck Tools](https://github.com/BarRaider/streamdeck-tools).
 
+For Mac users, the user mbelltbg created a script with a similar functionality. It can be found at [mac-streamdeck-color-picker](https://github.com/mbelltbg/mac-streamdeck-color-picker).
 
 
 ## Features

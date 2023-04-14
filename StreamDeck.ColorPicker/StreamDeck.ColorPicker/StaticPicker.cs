@@ -25,7 +25,7 @@ namespace StreamDeck.ColorPicker
 
             SetPicker();
 
-            timer = new Timer(10);
+            timer = new Timer(100);
             timer.Elapsed += new ElapsedEventHandler(CustomTick);
             timer.Enabled = false;
             timer.Start();

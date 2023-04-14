@@ -21,7 +21,7 @@
   "Description": "Colorblind Helper & Color Picker for Stream Deck.\nShows a color's name, its RGB or hexadecimal value.",
   "Icon": "Images/pluginIcon",
   "URL": "https://github.com/VictorGrycuk/streamdeck-color-picker",
-  "Version": "1.4.1",
+  "Version": "1.5.0",
   "CodePath": "StreamDeck.ColorPicker",
   "Category": "Color Picker",
   "CategoryIcon": "Images/categoryIcon",

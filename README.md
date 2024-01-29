@@ -89,7 +89,6 @@ If the copy to clipboard option is activated, it will update the copied value at
 
 - **[KeePass for StreamDeck](https://github.com/VictorGrycuk/StreamDeck-KeePass)**
 - **[Magnifier](https://github.com/VictorGrycuk/streamdeck-magnifier)**
-- **[Repository Watcher](https://github.com/VictorGrycuk/streamdeck-repository-watcher)**
 
 * * *
 

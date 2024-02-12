@@ -15,6 +15,7 @@ For Mac users, the user mbelltbg created a script with a similar functionality. 
 
 ## Features
 
+### Color Picker
 - Can show three different color values
   - Color name
   - RGB values
@@ -29,7 +30,11 @@ For Mac users, the user mbelltbg created a script with a similar functionality. 
   - Also included is the VGA definition also taken from [WhatColor](http://www.hikarun.com/e/) settings
 - Values can be copied to the clipboard
 
-
+## Color Palette 🆕
+- Can store color hex values, even after closing the StremDeck app
+- Quick press: Store value
+- A slightly longer press: Copy value to clipboard on release
+  - It only requires 1/4 second to keep it pressed to copy the value
 
 ## Color Values
 
@@ -89,7 +94,6 @@ If the copy to clipboard option is activated, it will update the copied value at
 
 - **[KeePass for StreamDeck](https://github.com/VictorGrycuk/StreamDeck-KeePass)**
 - **[Magnifier](https://github.com/VictorGrycuk/streamdeck-magnifier)**
-- **[Repository Watcher](https://github.com/VictorGrycuk/streamdeck-repository-watcher)**
 
 * * *
 

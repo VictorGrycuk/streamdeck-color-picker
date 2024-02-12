@@ -1,6 +1,7 @@
 ﻿using BarRaider.SdTools;
 using Newtonsoft.Json.Linq;
 using StreamDeck.ColorPicker.Models;
+using StreamDeck.ColorPicker.Settings;
 using System;
 using System.Timers;
 
@@ -13,15 +14,15 @@ namespace StreamDeck.ColorPicker
 
         #region Private Members
 
-        private static PluginSettings settings;
+        private static PickerSettings settings;
         private readonly Timer timer;
 
         #endregion
         public StaticPicker(SDConnection connection, InitialPayload payload) : base(connection, payload)
         {
             settings = payload.Settings == null || payload.Settings.Count == 0
-                ? PluginSettings.CreateDefaultSettings()
-                : payload.Settings.ToObject<PluginSettings>();
+                ? PickerSettings.CreateDefaultSettings()
+                : payload.Settings.ToObject<PickerSettings>();
 
             SetPicker();
 

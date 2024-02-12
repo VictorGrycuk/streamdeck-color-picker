@@ -5,6 +5,11 @@ namespace StreamDeck.ColorPicker.Models
 {
     internal class FormatRGB : Format
     {
+        internal override Color GetColorFromString(string color)
+        {
+            throw new NotImplementedException();
+        }
+
         internal override Font GetFont(string text)
         {
             return new Font("Consolas", 120, FontStyle.Bold);

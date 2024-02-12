@@ -1,5 +1,6 @@
 ﻿using BarRaider.SdTools;
 using StreamDeck.ColorPicker.Models;
+using StreamDeck.ColorPicker.Settings;
 using System;
 
 namespace StreamDeck.ColorPicker
@@ -13,7 +14,7 @@ namespace StreamDeck.ColorPicker
 
     internal static class ColorPickerFactory
     {
-        internal static Picker GetColorPicker(SDConnection connection, PluginSettings settings)
+        internal static Picker GetColorPicker(SDConnection connection, PickerSettings settings)
         {
             switch (settings.FunctionType)
             {

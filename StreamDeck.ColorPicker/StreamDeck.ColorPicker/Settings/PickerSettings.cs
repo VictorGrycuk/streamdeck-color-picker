@@ -1,13 +1,13 @@
 ﻿using Newtonsoft.Json;
 using static StreamDeck.ColorPicker.FormatFactory;
 
-namespace StreamDeck.ColorPicker
+namespace StreamDeck.ColorPicker.Settings
 {
-    internal class PluginSettings
+    internal class PickerSettings
     {
-        public static PluginSettings CreateDefaultSettings()
+        public static PickerSettings CreateDefaultSettings()
         {
-            var instance = new PluginSettings
+            var instance = new PickerSettings
             {
                 SelectValueToShow = string.Empty,
                 SelectFunctionType = string.Empty,

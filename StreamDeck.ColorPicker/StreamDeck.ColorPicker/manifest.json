@@ -1,7 +1,7 @@
 {
   "Actions": [
     {
-      "Icon": "Images/icon",
+      "Icon": "Images/pickerIcon",
       "Name": "Color Picker",
       "States": [
         {
@@ -14,6 +14,21 @@
       "Tooltip": "Allows to pick a pixel color and show its information.",
       "UUID": "com.victorgrycuk.static.picker",
       "PropertyInspectorPath": "PropertyInspector/ColorPickerPI.html"
+    },
+    {
+      "Icon": "Images/paletteIcon",
+      "Name": "Color Palette",
+      "States": [
+        {
+          "Image": "Images/colorPalette",
+          "TitleAlignment": "middle",
+          "FontSize": "12"
+        }
+      ],
+      "SupportedInMultiActions": false,
+      "Tooltip": "Picks and store a color with its hexadecimal value.",
+      "UUID": "com.victorgrycuk.color.palette",
+      "PropertyInspectorPath": "PropertyInspector/ColorPalettePI.html"
     }
   ],
   "Author": "Victor Grycuk",
@@ -21,7 +36,7 @@
   "Description": "Colorblind Helper & Color Picker for Stream Deck.\nShows a color's name, its RGB or hexadecimal value.",
   "Icon": "Images/pluginIcon",
   "URL": "https://github.com/VictorGrycuk/streamdeck-color-picker",
-  "Version": "1.5.0",
+  "Version": "2.0.0",
   "CodePath": "StreamDeck.ColorPicker",
   "Category": "Color Picker",
   "CategoryIcon": "Images/categoryIcon",

@@ -5,6 +5,11 @@ namespace StreamDeck.ColorPicker.Models
 {
     internal class FormatHex : Format
     {
+        internal override Color GetColorFromString(string hexString)
+        {
+            return ColorTranslator.FromHtml($"#{ hexString }");
+        }
+
         internal override Font GetFont(string text)
         {
             return new Font("Consolas", 120, FontStyle.Bold);

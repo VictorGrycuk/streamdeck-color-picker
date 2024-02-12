@@ -75,6 +75,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ColorPalette.cs" />
     <Compile Include="FormatFactory.cs" />
     <Compile Include="Helpers\ClipboardHelper.cs" />
     <Compile Include="Helpers\ColorHelper.cs" />
@@ -90,7 +91,8 @@
     <Compile Include="Models\PickerOnPress.cs" />
     <Compile Include="Models\Picker.cs" />
     <Compile Include="ColorPickerFactory.cs" />
-    <Compile Include="PluginSettings.cs" />
+    <Compile Include="Settings\PaletteSettings.cs" />
+    <Compile Include="Settings\PickerSettings.cs" />
     <Compile Include="StaticPicker.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -141,6 +143,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="PropertyInspector\check.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PropertyInspector\ColorPalettePI.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="PropertyInspector\elg_calendar.svg">

@@ -14,6 +14,11 @@ namespace StreamDeck.ColorPicker.Models
             definitionColors = ColorHelper.GetColorDefinition();
         }
 
+        internal override Color GetColorFromString(string color)
+        {
+            throw new NotImplementedException();
+        }
+
         internal override Font GetFont(string text)
         {
             // Based on what I think look best three letter names, which is around 142 px

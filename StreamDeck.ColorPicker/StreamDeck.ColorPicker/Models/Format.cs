@@ -7,6 +7,7 @@ namespace StreamDeck.ColorPicker.Models
         internal abstract string GetValueToShow(Color color);
 
         internal abstract string GetValueToCopy(Color color);
+        internal abstract Color GetColorFromString(string color);
 
         internal abstract Font GetFont(string text);
 
